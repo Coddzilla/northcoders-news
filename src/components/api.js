@@ -136,7 +136,7 @@ export const addComment = async (article_id, commentData, username) => {
 
     comment
   );
-
+  console.log(data);
   return data.comment;
 };
 

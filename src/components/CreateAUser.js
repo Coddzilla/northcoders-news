@@ -7,17 +7,11 @@ class CreateAUser extends Component {
     newName: ""
   };
   render() {
-    const {
-      handleChangeCreate,
-      newUser,
-      wantNewAvatar,
-      newAvatar,
-      setURL,
-      createNewUser,
-      handleChange
-    } = this.props;
+    const { wantNewAvatar, newAvatar, setURL, createNewUser } = this.props;
     return (
       <div>
+        <button onClick={wantNewAvatar}>Create a new avatar?</button> <br />
+        {newAvatar && <ChooseAvatar setURL={setURL} />}
         <label>What would you like your username to be?</label>
         <br />
         <input
@@ -25,6 +19,7 @@ class CreateAUser extends Component {
           onChange={this.handleChange}
           value={this.state.newUsername}
         />
+        <br />
         <label>What is your name?</label>
         <br />
         <input
@@ -38,10 +33,8 @@ class CreateAUser extends Component {
             createNewUser(this.state.newUsername, this.state.newName);
           }}
         >
-          Create a user
+          Done!
         </button>{" "}
-        <button onClick={wantNewAvatar}>Create a new avatar?</button>{" "}
-        {newAvatar && <ChooseAvatar setURL={setURL} />}
       </div>
     );
   }

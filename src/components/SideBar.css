@@ -1,0 +1,25 @@
+.Sidebar {
+  background: #798379;
+  grid-area: Sidebar;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background-size: 100%;
+  border: 2px solid grey;
+  border-style: ridge;
+  box-shadow: #798379;
+  background-image: url("https://previews.123rf.com/images/mexrix/mexrix1206/mexrix120600069/14260342-brown-cork-board-for-background.jpg");
+}
+
+.defaultSideBar {
+  margin: 0.5em auto;
+  margin: 5px;
+  background-size: 100%;
+  width: 250px;
+  height: 390px;
+  background: beige;
+  /* background-size: auto; */
+  background-position: center center;
+  background-image: url(" https://img.freepik.com/free-photo/crumpled-white-paper-texture-background_1627-2944.jpg?size=626&ext=jpg");
+  padding: 20px;
+}

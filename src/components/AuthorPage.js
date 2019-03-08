@@ -41,7 +41,7 @@ class AuthorPage extends Component {
       <>
         <section className="MainLeft">
           <Link to={`/postArticle`}>Write an article!</Link>
-          <img src={this.state.url} alt="avatar" />
+          <img className="avatarImage" src={this.state.url} alt="avatar" />
           <div>Articles written by {user.username}:</div>
           <ul>
             {authorsArticles.map(article => {

@@ -59,7 +59,8 @@ class ChooseAvatar extends Component {
     return (
       <div>
         <form
-          onSubmit={() => {
+          onSubmit={event => {
+            event.preventDefault();
             setURL(
               hairStyle,
               accessories,

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-import "../LogIn.css";
+import "./LogIn.css";
 
 const LogIn = ({ handleClick }) => {
   return (

@@ -21,6 +21,7 @@ class App extends Component {
     newUsername: ""
   };
   render() {
+    console.log(this.state.avatarURL);
     if (this.state.err) {
       return <Error err={this.state.err} />;
     }
@@ -39,7 +40,11 @@ class App extends Component {
           <div>
             <h4>or create a new user...</h4>
             {this.state.newAvatar && (
-              <img src={this.state.avatarURL} alt="avatarURL" />
+              <img
+                className="avatarImage"
+                src={this.state.avatarURL}
+                alt="avatarURL"
+              />
             )}
             <CreateAUser
               wantNewAvatar={this.wantNewAvatar}

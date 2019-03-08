@@ -1,5 +1,6 @@
 import React from "react";
 import ErrorImages from "./ErrorImages";
+import "./Error.css";
 
 const Error = ({ err }) => {
   if (err) {

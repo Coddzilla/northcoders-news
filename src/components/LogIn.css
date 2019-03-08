@@ -9,7 +9,7 @@
   grid-area: LogIn;
   height: 70px;
   display: flex;
-  color: white;
+  /* color: white; */
   justify-content: space-around;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
 }

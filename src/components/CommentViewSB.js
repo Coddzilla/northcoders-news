@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PostAComment from "./PostAComment";
 import Voter from "./Voter";
+import "./CommentViewSB.css";
 
 class CommentQuickView extends Component {
   render() {
@@ -17,10 +18,10 @@ class CommentQuickView extends Component {
     return (
       <div>
         {dataToView.length === 0 && (
-          <h2>
+          <h3 className="SignBoard">
             There are currently no comments for this. Why don't you be the
             first!?
-          </h2>
+          </h3>
         )}
 
         <div>

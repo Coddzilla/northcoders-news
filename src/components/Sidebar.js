@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import * as api from "./api";
-
-import { navigate } from "@reach/router";
+import "./SideBar.css";
 import QuickViewPage from "./QuickViewPage";
 import CommentQuickView from "./CommentViewSB";
 import Error from "./Error";
@@ -105,7 +104,7 @@ class SideBar extends Component {
     api
       .addComment(article.article_id, fullComment, username)
       .then(([comment]) => {
-        //optimistic rendering
+        //how to optimistically render when there are created-at's etc?
         this.setState({ dataToView: [comment.body, ...this.state.dataToView] });
       })
       .catch(err => {

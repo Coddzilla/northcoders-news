@@ -1,0 +1,15 @@
+.QuickView {
+  background-size: 100%;
+  width: 90%;
+  width: 250px;
+  height: 390px;
+  margin: 0.5em auto;
+  margin: 10px;
+  font-family: "Times New Roman", Times, serif;
+  color: darkblue;
+  background-size: auto;
+  background-position: center center;
+  background-image: url(" https://img.freepik.com/free-photo/crumpled-white-paper-texture-background_1627-2944.jpg?size=626&ext=jpg");
+  grid-template-areas: fit-content(5cm);
+  padding: 20px;
+}

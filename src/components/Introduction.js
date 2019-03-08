@@ -8,7 +8,7 @@ import NoMatch from "./NoMatch";
 import PostArticle from "./postArticle";
 import Profile from "./profile";
 import Error from "./Error";
-
+// import "./Introduction.css";
 class Introduction extends Component {
   state = {
     topics: [],
@@ -30,7 +30,11 @@ class Introduction extends Component {
         <nav className="LogIn">
           {" "}
           {topics.map(topic => (
-            <Link to={`/topics/${topic.slug}`} key={topic.slug}>
+            <Link
+              className="topic"
+              to={`/topics/${topic.slug}`}
+              key={topic.slug}
+            >
               {topic.slug}
             </Link>
           ))}

@@ -1,11 +1,17 @@
 import React from "react";
+import "./PostAComment.css";
 
 const PostAComment = ({ handleSubmit, handleChange, newComment }) => {
   return (
-    <div>
+    <div className="PostAComment">
       <form onSubmit={handleSubmit}>
         <label>Post a comment</label>
-        <input onChange={handleChange} value={newComment} required />
+        <input
+          className="inputComment"
+          onChange={handleChange}
+          value={newComment}
+          required
+        />
         <button className="button" type="submit">
           Post
         </button>

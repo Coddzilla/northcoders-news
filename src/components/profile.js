@@ -37,7 +37,7 @@ class Profile extends Component {
     return (
       <>
         <section className="MainLeft">
-          <img src={user.avatar_url} alt="avatar_url" />
+          <img className="avatarImage" src={user.avatar_url} alt="avatar_url" />
 
           <div>Articles written by {user.username}:</div>
           <ul>
