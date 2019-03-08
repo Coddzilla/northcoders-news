@@ -1,0 +1,17 @@
+.card {
+  padding: 4px;
+  border: 0.5px solid rgb(135, 135, 135);
+  border-radius: 5px;
+  display: flex;
+  box-shadow: 2px 2px;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* background: var(--card-colour); */
+/* width: 95%; */
+/* margin: 15px; */
+/* justify-content: space-between; */
+/* flex-flow: column; */

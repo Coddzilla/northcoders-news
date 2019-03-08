@@ -1,0 +1,206 @@
+.App {
+  margin: 0;
+  padding: 0;
+  text-align: centre;
+  height: 100vh;
+  display: grid;
+  grid-template: 1fr 1fr 7fr / 4fr;
+  grid-template-areas:
+    "Header"
+    "LogIn"
+    "Main";
+}
+
+/* .DeleteButton {
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  background: url("https://andyhooke.co.uk/wp-content/uploads/2018/02/yellow-brushstroke.png")
+    no-repeat 25% 50% transparent;
+  width: auto;
+}
+
+.CommentsButton {
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  background: url("https://andyhooke.co.uk/wp-content/uploads/2018/02/yellow-brushstroke.png")
+    no-repeat 25% 50% transparent;
+  width: auto;
+}
+
+.QuickViewButton {
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  background: url("https://andyhooke.co.uk/wp-content/uploads/2018/02/yellow-brushstroke.png")
+    no-repeat 25% 50% transparent;
+  width: auto;
+} */
+
+.Header {
+  /* background: yellow; */
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  background-image: url("http://www.wearecallidus.com/wp-content/uploads/2017/03/8e3e848cbd24bdb85a7c97869ec77386.1451995352.jpg");
+  grid-area: Header;
+}
+
+.main {
+  grid-area: Main;
+  overflow-y: auto;
+  height: 100vh;
+  display: grid;
+  grid-template: 1fr / 6fr 2fr;
+  grid-template-areas: "MainLeft Sidebar";
+  background-image: url("https://www.photohdx.com/images/2017/04/clean-white-paper-background-texture.jpg");
+}
+
+/* a:visited {
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+} */
+/* .nav {
+  color: white;
+} */
+
+a:link,
+a:visited {
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.MainLeft {
+  grid-area: MainLeft;
+  background-repeat: no-repeat;
+  background-image: url("https://www.photohdx.com/images/2017/04/clean-white-paper-background-texture.jpg");
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.LogIn {
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-left: 0px 0px 0px 30px;
+  background-position: center;
+  background-image: url("http://www.nobailout.org/upload/2019/01/06/iphone-backgrounds-hd-shelves-clean-light-white-shelf-iphone-6-plus-iphone-white-shelves-s-d649a34fa166da66.jpg");
+  grid-area: LogIn;
+  height: 70px;
+  display: flex;
+  color: white;
+  justify-content: space-around;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.Sidebar {
+  background: #798379;
+  grid-area: Sidebar;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background-size: 100%;
+  border: 2px solid grey;
+  border-style: ridge;
+  box-shadow: #798379;
+  background-image: url("https://previews.123rf.com/images/mexrix/mexrix1206/mexrix120600069/14260342-brown-cork-board-for-background.jpg");
+}
+
+.button {
+  height: 20px;
+  /* border: none;
+  background-color: transparent;
+  background: url("https://andyhooke.co.uk/wp-content/uploads/2018/02/yellow-brushstroke.png")
+    no-repeat 25% 50% transparent;
+  width: auto; */
+}
+
+.container {
+  width: 400px;
+  height: auto;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.card {
+  /* width: 300px;
+  height: 200px; */
+  color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  /* display: flex; */
+}
+
+/* .LogIn {
+  display: flex;
+  justify-content: space-around;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+} */
+/* .homeContainer {
+  width: 2rem;
+  height: 2rem;
+} */
+
+/* .postButton {
+} */
+
+.comment {
+  background-size: 100%;
+  width: 90%;
+  margin: 0.5em auto;
+  margin: 10px;
+  font-family: Chalkduster, fantasy;
+  color: darkblue;
+  background-size: auto;
+  background-position: center center;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Post-it-note-transparent.png");
+  grid-template-areas: fit-content(5cm);
+}
+
+.defaultSideBar {
+  margin: 0.5em auto;
+  margin: 5px;
+  background-size: 100%;
+  width: 250px;
+  height: 400px;
+  background: beige;
+  /* background-size: auto; */
+  background-position: center center;
+  background-image: url(" https://img.freepik.com/free-photo/crumpled-white-paper-texture-background_1627-2944.jpg?size=626&ext=jpg");
+}
+.commentInfo {
+  width: 90%;
+  margin: 0.5em auto;
+}
+
+.userList {
+  display: flex;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.errorImage {
+  display: flex;
+  justify-content: center;
+  /* align-content: center; */
+  width: 100%;
+  height: auto;
+}
+
+.avatarImage {
+  display: flex;
+  justify-items: center;
+}

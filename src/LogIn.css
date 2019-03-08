@@ -1,0 +1,15 @@
+.LogIn {
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-left: 0px 0px 0px 30px;
+  background-position: center;
+  background-image: url("http://www.nobailout.org/upload/2019/01/06/iphone-backgrounds-hd-shelves-clean-light-white-shelf-iphone-6-plus-iphone-white-shelves-s-d649a34fa166da66.jpg");
+  grid-area: LogIn;
+  height: 70px;
+  display: flex;
+  color: white;
+  justify-content: space-around;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
