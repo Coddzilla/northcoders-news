@@ -1,10 +1,8 @@
-// use watson to google the phrase and get the first image result url
-
 import React, { Component } from "react";
 import Error from "./Error";
 import * as api from "./api";
 import Voter from "./Voter";
-// import Comments from "./Comments";
+
 import { Link } from "@reach/router";
 import SideBar from "./Sidebar";
 import IsLoading from "./isLoading";
@@ -44,7 +42,7 @@ class Article extends Component {
               </Link>
               <img className="avatarImage" src={this.state.url} alt="avatar" />
             </h5>
-            {/* <img src={} alt=""/> */}
+
             <Voter
               article_id={article.article_id}
               votes={article.votes}
@@ -68,7 +66,6 @@ class Article extends Component {
           {images[article.topic] && (
             <div className="container">
               <img
-                // src={cooking[article.article_id]}
                 src={images[article.topic][Math.floor(Math.random() * 11)]}
                 alt="sorry, unavailable"
               />
@@ -100,12 +97,10 @@ class Article extends Component {
       .getArticle(article_id)
       .then(article => {
         const { users } = this.props;
-        console.log("users", users);
+
         const authorUser = users.filter(
           user => user.username === article.author
         );
-        console.log(users);
-        //check if users is still there
 
         this.setState({
           article,
@@ -114,7 +109,6 @@ class Article extends Component {
         });
       })
       .catch(err => {
-        console.log(err);
         this.setState({ err: err.response.status });
       });
   };

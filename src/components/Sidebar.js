@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import * as api from "./api";
-// import Voter from "./Voter";
-// import PostAComment from "./PostAComment";
+
 import { navigate } from "@reach/router";
 import QuickViewPage from "./QuickViewPage";
 import CommentQuickView from "./CommentViewSB";
@@ -47,7 +46,6 @@ class SideBar extends Component {
       );
     }
 
-    //quick view
     if (sideBarView === "QuickView" && article) {
       return (
         <div className="Sidebar">
@@ -101,17 +99,14 @@ class SideBar extends Component {
     this.setState({ fullComment });
   };
   handleSubmit = event => {
-    console.log(event);
     const { article, username } = this.props;
     event.preventDefault();
     const fullComment = this.state.fullComment;
     api
       .addComment(article.article_id, fullComment, username)
       .then(([comment]) => {
+        //optimistic rendering
         this.setState({ dataToView: [comment.body, ...this.state.dataToView] });
-
-        // navigate('/');
-        //why does it have this as a NAN until you refresh?
       })
       .catch(err => {
         this.setState({ err: err.response.status });

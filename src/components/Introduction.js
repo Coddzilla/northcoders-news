@@ -18,8 +18,6 @@ class Introduction extends Component {
   render() {
     const { topics, isLoading } = this.state;
 
-    // let fullTopics = topics.filter(topic => article.topic.length !== 0);
-    //check if there are any artciles for the topic? this won't work as it is
     const { users } = this.props;
     if (this.state.err) {
       return <Error err={this.state.err} />;
@@ -58,7 +56,6 @@ class Introduction extends Component {
             path="/users/:user/articles"
             userLoggedIn={this.props.user}
             users={users}
-            // user={this.props.user}
           />
           <PostArticle path="/postArticle" user={this.props.user} />
           <NoMatch default />

@@ -12,6 +12,7 @@ import football from "./FootballImages";
 import defaultImg from "./defaultImages";
 import { throttle } from "lodash";
 import "./Articles.css";
+import { runInThisContext } from "vm";
 
 class Articles extends Component {
   state = {
@@ -159,7 +160,7 @@ class Articles extends Component {
 
   componentDidMount() {
     this.fetchArticles();
-    //need a boolean that only sets the eventlistener once
+
     this.addScrollEventListener();
   }
 
@@ -174,11 +175,8 @@ class Articles extends Component {
     if (
       prevState.page !== this.state.page ||
       prevState.sort_by !== this.state.sort_by ||
-      // prevProps.view !== this.props.view ||
       prevProps.topic !== this.props.topic
-      //need to add for if haveAllArticles?
     ) {
-      console.log("CHANGED");
       this.fetchArticles();
     }
   }
@@ -187,16 +185,11 @@ class Articles extends Component {
     document
       .querySelector(".AllArticles")
       .addEventListener("scroll", this.handleScroll);
-    // window.addEventListener("scroll", this.handleScroll);
   };
 
   handleScroll = throttle(event => {
     const { scrollHeight, scrollTop, clientHeight } = event.target;
 
-    // if (total_Count === articles.length) {
-    //   //write api to get totalCount
-    //   this.setState({ haveAllArticles: true });
-    // }
     if (
       clientHeight + scrollTop + 100 > scrollHeight &&
       !this.state.haveAllArticles

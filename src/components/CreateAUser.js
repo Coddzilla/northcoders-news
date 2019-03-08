@@ -17,7 +17,6 @@ class CreateAUser extends Component {
       handleChange
     } = this.props;
     return (
-      // <form onSubmit={handleCreateClick}>
       <div>
         <label>What would you like your username to be?</label>
         <br />

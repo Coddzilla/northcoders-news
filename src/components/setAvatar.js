@@ -12,7 +12,6 @@ avatarBoys = {
 
 "https://avataaars.io/?avatarStyle=Circle&topType=LongHairNotTooLong&accessoriesType=Blank&hairColor=Brown&facialHairType=Blank&clotheType=Hoodie&clotheColor=Black&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light"`https://avataaars.io/?avatarStyle=Circle&topType=${hairStyle}&accessoriesType=${accessories}&hairColor=${hairColour}&facialHairType=${facialHair}&clotheType=Hoodie&clotheColor=Black&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=${skinColour}`;
 
-//beard
 `https://avataaars.io/?avatarStyle=Circle&topType=${hairStyle}&accessoriesType=${accessories}&hairColor=${hairColour}&facialHairType=${facialHair}&facialHairColor=${hairColour}&clotheType=Hoodie&clotheColor=Black&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=${skinColour}`;
 
 // drop down list which gets you to choose your options, pass them into here and fills in the rest

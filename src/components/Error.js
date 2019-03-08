@@ -2,7 +2,6 @@ import React from "react";
 import ErrorImages from "./ErrorImages";
 
 const Error = ({ err }) => {
-  console.log(err);
   if (err) {
     return (
       <div className="errorImage">

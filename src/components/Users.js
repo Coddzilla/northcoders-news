@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 
 class Users extends Component {
-  // state = { users: [] };
   render() {
     const { users } = this.props;
-    console.log("line 777", users);
+
     return (
       <div className="userList">
         {users.length !== 0 &&
@@ -24,13 +23,6 @@ class Users extends Component {
   componentDidMount() {
     this.props.fetchUsers();
   }
-
-  // fetchUsers = () => {
-  //   api.getUsers().then(users => {
-  //     this.setState({ users });
-  //     // this.props.saveUsers({ users });
-  //   });
-  // };
 }
 
 export default Users;

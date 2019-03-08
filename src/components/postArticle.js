@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as api from "./api";
-// import { timingSafeEqual } from "crypto";
+
 import Error from "./Error";
 
 class PostArticle extends Component {
@@ -10,7 +10,7 @@ class PostArticle extends Component {
     topic: "coding",
     newTopic: "",
     chooseNewTopic: "false",
-    //not being used yet
+
     Topics: [],
     err: null
   };

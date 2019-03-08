@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PostAComment from "./PostAComment";
 import Voter from "./Voter";
-//change into a function?
+
 class CommentQuickView extends Component {
   render() {
     const {
@@ -52,7 +52,6 @@ class CommentQuickView extends Component {
                           onClick={() => {
                             handleClick(article.article_id, comment.comment_id);
                           }}
-                          // key="deleteComment"
                         >
                           Delete comment
                         </button>

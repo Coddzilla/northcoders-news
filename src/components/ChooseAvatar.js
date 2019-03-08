@@ -56,11 +56,8 @@ class ChooseAvatar extends Component {
 
     const Accessories = ["Blank", "Prescription02", "Sunglasses", "Round"];
 
-    //could put these into an array and do a for each which maps over each one
-
     return (
       <div>
-        {/* onSubmit={handleSubmit} */}
         <form
           onSubmit={() => {
             setURL(

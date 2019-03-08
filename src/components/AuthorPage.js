@@ -30,10 +30,7 @@ class AuthorPage extends Component {
             Hummm.. looks like you don't have any live articles at the moment,
             would you like to post one?
           </p>
-          {/* <img
-            src="https://i.dlpng.com/static/png/1356072_preview.png"
-            alt="typeWriter"
-          /> */}
+
           <Link to={`/postArticle`}>Write an article!</Link>
         </div>
       );
@@ -98,11 +95,11 @@ class AuthorPage extends Component {
 
   fetchUserArticles = () => {
     const { users, user } = this.props;
-    console.log(users, user);
+
     const authorUser = users.filter(
       userToFilter => userToFilter.username === user
     );
-    //fine up to here but users is []
+
     api
       .getUserArticles(user)
       .then(authorsArticles => {

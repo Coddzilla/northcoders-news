@@ -29,7 +29,6 @@ class Auth extends Component {
   handleChange = event => {
     event.preventDefault();
     const username = event.target.value;
-    console.log(username);
     this.setState({ username });
   };
   handleSubmit = event => {
@@ -39,15 +38,6 @@ class Auth extends Component {
     this.setState({ username: "" });
   };
 
-  // componentDidMount() {
-  //   const retrievedState = localStorage.getItem("state");
-  //   console.log(JSON.parse(retrievedState));
-  //   const parsedState = JSON.parse(retrievedState);
-  //   console.log(parsedState);
-  //   if (typeof parsedState === "object") {
-  //     this.setState(parsedState);
-  //   }
-  // }
   componentDidUpdate() {
     this.handleSave();
   }

@@ -14,7 +14,6 @@ class App extends Component {
   state = {
     user: {},
     users: [],
-
     err: null,
     newUser: "",
     avatarURL: "https://i.stack.imgur.com/HQwHI.jpg",
