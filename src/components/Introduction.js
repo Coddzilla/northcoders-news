@@ -41,6 +41,15 @@ class Introduction extends Component {
               </Link>
             ))}
           </MediaQuery>
+          <MediaQuery maxDeviceWidth={1224}>
+            <select name="topic" id="topicSelect" onChange={this.handleChange}>
+              {topics.map(topic => (
+                <option value={topic.slug} key={topic.slug}>
+                  {topic.slug}
+                </option>
+              ))}
+            </select>
+          </MediaQuery>
           <Link to="/articles">View all articles</Link>
           <Link to="/postArticle">Post an Article!</Link>
         </nav>
@@ -74,6 +83,12 @@ class Introduction extends Component {
   componentDidMount() {
     this.fetchTopics();
   }
+
+  handleChange = event => {
+    const { value } = event.target;
+    console.log(value);
+    this.props.navigate(`/topics/${value}`);
+  };
 
   fetchTopics = () => {
     api
