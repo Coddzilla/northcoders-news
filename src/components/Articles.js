@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-import * as api from "./api";
+import * as api from "../api";
 import { Link } from "@reach/router";
 import Comments from "./Comments";
 import QuickView from "./QuickView";
 import SideBar from "./Sidebar";
 import Empty from "./Empty";
 import Error from "./Error";
-import cooking from "./CookingImages";
-import coding from "./CodingImages";
-import football from "./FootballImages";
+import cooking from "./cookingImages";
+import coding from "./codingImages";
+import football from "./footballImages";
 import defaultImg from "./defaultImages";
 import { throttle } from "lodash";
-import "./Articles.css";
-import { runInThisContext } from "vm";
+import "../CSS/Articles.css";
+import MediaQuery from "react-responsive";
 
 class Articles extends Component {
   state = {
@@ -84,17 +84,21 @@ class Articles extends Component {
                         <img src={images.defaultImg[0]} alt={article.topic} />
                       </div>
                     )}
+                    <br />
                     <Link to={`/articles/${article.article_id}`}>
                       {article.title}
                     </Link>{" "}
-                    <QuickView
-                      article={article}
-                      handleClick={this.handleClickQuickView}
-                    />
-                    <Comments
-                      article={article}
-                      handleClick={this.handleClickComments}
-                    />
+                    <br />
+                    <MediaQuery minDeviceWidth={1224}>
+                      <QuickView
+                        article={article}
+                        handleClick={this.handleClickQuickView}
+                      />
+                      <Comments
+                        article={article}
+                        handleClick={this.handleClickComments}
+                      />
+                    </MediaQuery>
                     {this.props.user.username === article.author && (
                       <button
                         className="DeleteButton"
@@ -109,30 +113,27 @@ class Articles extends Component {
                   </div>
                 );
               }
-              //not dry
+
               return (
                 <div className="card" key={article.article_id}>
                   {this.props.view === "home" && (
                     <div className="container">
-                      <img
-                        src={
-                          images[article.topic][Math.floor(Math.random() * 11)]
-                        }
-                        alt={article.topic}
-                      />
+                      <img src={images[article.topic][0]} alt={article.topic} />
                     </div>
                   )}
                   <Link to={`/articles/${article.article_id}`}>
                     {article.title}
                   </Link>{" "}
-                  <QuickView
-                    article={article}
-                    handleClick={this.handleClickQuickView}
-                  />
-                  <Comments
-                    article={article}
-                    handleClick={this.handleClickComments}
-                  />
+                  <MediaQuery minDeviceWidth={1224}>
+                    <QuickView
+                      article={article}
+                      handleClick={this.handleClickQuickView}
+                    />
+                    <Comments
+                      article={article}
+                      handleClick={this.handleClickComments}
+                    />
+                  </MediaQuery>
                   {this.props.user.username === article.author && (
                     <button
                       className="button"
@@ -149,11 +150,13 @@ class Articles extends Component {
             })}
           </ul>
         </section>
-        <SideBar
-          sideBarView={sideBarView}
-          article={article}
-          username={this.props.user.username}
-        />
+        <MediaQuery minDeviceWidth={1224}>
+          <SideBar
+            sideBarView={sideBarView}
+            article={article}
+            username={this.props.user.username}
+          />
+        </MediaQuery>
       </>
     );
   }
@@ -165,19 +168,21 @@ class Articles extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (
-      prevProps.view !== this.props.view ||
-      prevState.sort_by !== this.state.sort_by ||
-      prevProps.topic !== this.props.topic
-    ) {
-      this.setState({ page: 1 });
-    }
-    if (
-      prevState.page !== this.state.page ||
-      prevState.sort_by !== this.state.sort_by ||
-      prevProps.topic !== this.props.topic
-    ) {
-      this.fetchArticles();
+    if (this.props.view !== "home") {
+      if (
+        prevProps.view !== this.props.view ||
+        prevState.sort_by !== this.state.sort_by ||
+        prevProps.topic !== this.props.topic
+      ) {
+        this.setState({ page: 1 });
+      }
+      if (
+        prevState.page !== this.state.page ||
+        prevState.sort_by !== this.state.sort_by ||
+        prevProps.topic !== this.props.topic
+      ) {
+        this.fetchArticles();
+      }
     }
   }
 

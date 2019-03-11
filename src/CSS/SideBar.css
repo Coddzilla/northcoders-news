@@ -3,7 +3,8 @@
   grid-area: Sidebar;
   display: flex;
   flex-direction: column;
-  overflow: auto;
+  overflow-y: scroll;
+  /* width: 100; */
   background-size: 100%;
   border: 2px solid grey;
   border-style: ridge;

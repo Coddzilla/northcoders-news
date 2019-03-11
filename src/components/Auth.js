@@ -42,7 +42,7 @@ class Auth extends Component {
     this.handleSave();
   }
   handleSave = () => {
-    localStorage.setItem("state", JSON.stringify(this.state));
+    localStorage.setItem("username", JSON.stringify(this.state.username));
   };
 }
 

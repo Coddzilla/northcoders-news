@@ -1,0 +1,108 @@
+.App {
+  margin: 0;
+  padding: 0;
+  text-align: centre;
+  height: 100vh;
+  display: grid;
+  grid-template: 1fr 1fr 7fr / 4fr;
+  grid-template-areas:
+    "Header"
+    "LogIn"
+    "Main";
+}
+
+.Header {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  background-image: url("http://www.wearecallidus.com/wp-content/uploads/2017/03/8e3e848cbd24bdb85a7c97869ec77386.1451995352.jpg");
+  grid-area: Header;
+}
+
+.main {
+  grid-area: Main;
+  overflow-y: auto;
+  height: 100vh;
+  display: grid;
+  grid-template: 1fr / 6fr 2fr;
+  grid-template-areas: "MainLeft Sidebar";
+  background-image: url("https://www.photohdx.com/images/2017/04/clean-white-paper-background-texture.jpg");
+}
+
+@media only screen and (max-width: 1000px) {
+  .main {
+    grid-area: Main;
+    overflow-y: auto;
+    height: 100vh;
+    display: grid;
+    grid-template: 5fr 2fr / 1fr;
+    grid-template-areas:
+      "MainLeft"
+      "Sidebar";
+    background-image: url("https://www.photohdx.com/images/2017/04/clean-white-paper-background-texture.jpg");
+  }
+}
+
+.MainLeft a:link,
+a:visited {
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* .LogIn a:link,
+a:visited {
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+} */
+
+.MainLeft {
+  grid-area: MainLeft;
+  background-repeat: no-repeat;
+  background-image: url("https://www.photohdx.com/images/2017/04/clean-white-paper-background-texture.jpg");
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.button {
+  height: 20px;
+}
+
+.container {
+  width: 400px;
+  height: auto;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.commentInfo {
+  width: 90%;
+  margin: 0.5em auto;
+}
+
+.userList {
+  display: flex;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.avatarImage {
+  display: flex;
+  justify-items: center;
+}
+
+.PostArticle {
+  padding: 20px;
+}

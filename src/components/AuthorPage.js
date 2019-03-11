@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
-import * as api from "./api";
+import * as api from "../api";
 import Comments from "./Comments";
 import Voter from "./Voter";
 import QuickView from "./QuickView";
 import SideBar from "./Sidebar";
-import IsLoading from "./isLoading";
+import IsLoading from "./IsLoading";
 import Error from "./Error";
 
 class AuthorPage extends Component {
@@ -31,7 +31,7 @@ class AuthorPage extends Component {
             would you like to post one?
           </p>
 
-          <Link to={`/postArticle`}>Write an article!</Link>
+          <Link to={`/postArticle`}>Post a new article?</Link>
         </div>
       );
     } else if (isLoading) {
@@ -40,8 +40,8 @@ class AuthorPage extends Component {
     return (
       <>
         <section className="MainLeft">
-          <Link to={`/postArticle`}>Write an article!</Link>
           <img className="avatarImage" src={this.state.url} alt="avatar" />
+          <Link to={`/postArticle`}>Write a new article?</Link>
           <div>Articles written by {user.username}:</div>
           <ul>
             {authorsArticles.map(article => {
@@ -110,6 +110,7 @@ class AuthorPage extends Component {
         });
       })
       .catch(err => {
+        console.log(err);
         this.setState({ err: err.response.status });
       });
   };
@@ -133,6 +134,7 @@ class AuthorPage extends Component {
         this.setState({ authorsArticles: newArticles });
       })
       .catch(err => {
+        console.log(err);
         this.setState({ err: err.response.status });
       });
   };

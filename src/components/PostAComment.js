@@ -1,5 +1,5 @@
 import React from "react";
-import "./PostAComment.css";
+import "../CSS/PostAComment.css";
 
 const PostAComment = ({ handleSubmit, handleChange, newComment }) => {
   return (

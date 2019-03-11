@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import Error from "./Error";
-import * as api from "./api";
+import * as api from "../api";
 import Voter from "./Voter";
-
 import { Link } from "@reach/router";
 import SideBar from "./Sidebar";
-import IsLoading from "./isLoading";
-import cooking from "./CookingImages";
-import coding from "./CodingImages";
-import football from "./FootballImages";
+import IsLoading from "./IsLoading";
+import cooking from "./cookingImages";
+import coding from "./codingImages";
+import football from "./footballImages";
 import defaultImg from "./defaultImages";
+// import MediaQuery from "react-responsive";
 
 class Article extends Component {
   state = {
@@ -77,12 +77,20 @@ class Article extends Component {
             </div>
           )}
         </section>
-
+        {/* <MediaQuery minDeviceWidth={1224}> */}
         <SideBar
           sideBarView="commentView"
           article={article}
           username={this.props.user.username}
         />
+        {/* </MediaQuery> */}
+        {/* <MediaQuery maxDeviceWidth={1224}> */}
+        {/* <SideBar
+            sideBarView="phoneMode"
+            article={article}
+            username={this.props.user.username}
+          />
+        </MediaQuery> */}
       </>
     );
   }

@@ -2,13 +2,12 @@ import React, { Component } from "react";
 import Header from "./components/Header";
 import LogIn from "./components/LogIn";
 import Introduction from "./components/Introduction";
-import * as api from "./components/api";
+import * as api from "./api";
 import Auth from "./components/Auth";
 import Users from "./components/Users";
 import Error from "./components/Error";
 import CreateAUser from "./components/CreateAUser";
-
-import "./App.css";
+import "./CSS/App.css";
 
 class App extends Component {
   state = {

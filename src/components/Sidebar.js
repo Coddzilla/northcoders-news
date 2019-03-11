@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import * as api from "./api";
-import "./SideBar.css";
+import * as api from "../api";
+import "../CSS/SideBar.css";
 import QuickViewPage from "./QuickViewPage";
 import CommentQuickView from "./CommentViewSB";
 import Error from "./Error";

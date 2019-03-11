@@ -49,9 +49,10 @@ export const getArticles = async (sort_by, props, page) => {
 
     return data.articles;
   } else if (props.view === "home") {
+    console.log("line 52");
     const { data } = await axios.get(`${BASE_URL}/articles`, {
       params: {
-        p: page,
+        p: 1,
         sort_by: "votes",
         order: "desc",
         limit: 3

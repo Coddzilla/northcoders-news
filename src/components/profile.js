@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
-import * as api from "./api";
+import * as api from "../api";
 import Comments from "./Comments";
-import IsLoading from "./isLoading";
+import IsLoading from "./IsLoading";
 import QuickView from "./QuickView";
 import SideBar from "./Sidebar";
 import Error from "./Error";
@@ -78,7 +78,7 @@ class Profile extends Component {
                 Hummm... looks like you haven't got any live articles at the
                 moment, want to post one?!
               </p>
-              {/* <PostArticle path="/postArticle" username={this.props.username} /> */}
+
               <Link to={`/postArticle`}>Write an article!</Link>
             </div>
           )}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import * as api from "./api";
+import * as api from "../api";
 
 import Error from "./Error";
 
@@ -34,7 +34,7 @@ class PostArticle extends Component {
           </button>
           {this.state.topic === "new" && (
             <div>
-              <label>Make a new topic?</label>
+              <label>Write your new topic here...</label>
               <input
                 type="text"
                 onChange={this.handleTopicChange}
@@ -47,8 +47,9 @@ class PostArticle extends Component {
           )}
         </div>
         <br />
-        <div>
+        <div className="PostArticle">
           <label>Title: </label>
+          <br />
           <input
             onChange={this.handleChange}
             type="text"
@@ -56,12 +57,15 @@ class PostArticle extends Component {
             name="title"
             required
           />
-
+          <br />
+          <br />
           <label>Write your article here...</label>
-          <input
+          <br />
+          <textarea
             onChange={this.handleChange}
             type="text"
-            size="70"
+            rows="10"
+            cols="100"
             value={this.state.body}
             name="body"
             required
@@ -87,7 +91,11 @@ class PostArticle extends Component {
       });
   };
   handleSave = () => {
-    localStorage.setItem("state", JSON.stringify(this.state));
+    const { body, title, topic, newTopic, chooseNewTopic, Topics } = this.state;
+    localStorage.setItem(
+      "postInformation",
+      JSON.stringify(body, title, topic, newTopic, chooseNewTopic, Topics)
+    );
   };
 
   handleChange = event => {

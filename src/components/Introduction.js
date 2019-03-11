@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import * as api from "./api";
+import * as api from "../api";
 import { Link, Router } from "@reach/router";
 import Articles from "./Articles";
 import Article from "./Article";
 import AuthorPage from "./AuthorPage";
 import NoMatch from "./NoMatch";
-import PostArticle from "./postArticle";
-import Profile from "./profile";
+import PostArticle from "./PostArticle";
+import Profile from "./Profile";
 import Error from "./Error";
-// import "./Introduction.css";
+import MediaQuery from "react-responsive";
+
 class Introduction extends Component {
   state = {
     topics: [],
@@ -29,15 +30,17 @@ class Introduction extends Component {
       <section>
         <nav className="LogIn">
           {" "}
-          {topics.map(topic => (
-            <Link
-              className="topic"
-              to={`/topics/${topic.slug}`}
-              key={topic.slug}
-            >
-              {topic.slug}
-            </Link>
-          ))}
+          <MediaQuery minDeviceWidth={1224}>
+            {topics.map(topic => (
+              <Link
+                className="topic"
+                to={`/topics/${topic.slug}`}
+                key={topic.slug}
+              >
+                {topic.slug}
+              </Link>
+            ))}
+          </MediaQuery>
           <Link to="/articles">View all articles</Link>
           <Link to="/postArticle">Post an Article!</Link>
         </nav>
