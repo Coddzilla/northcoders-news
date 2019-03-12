@@ -98,18 +98,20 @@ class SideBar extends Component {
     this.setState({ fullComment });
   };
   handleSubmit = event => {
-    const { article, username } = this.props;
     event.preventDefault();
+    const { article, username } = this.props;
     const fullComment = this.state.fullComment;
-    api
-      .addComment(article.article_id, fullComment, username)
-      .then(([comment]) => {
-        //how to optimistically render when there are created-at's etc?
-        this.setState({ dataToView: [comment.body, ...this.state.dataToView] });
-      })
-      .catch(err => {
-        this.setState({ err: err.response.status });
-      });
+    api.addComment(article.article_id, fullComment, username);
+
+    const newComment = {
+      username,
+      body: fullComment,
+      article_id: 1,
+      votes: 0,
+      created_at: Date.now()
+    };
+
+    this.setState({ dataToView: [newComment, ...this.state.dataToView] });
 
     this.setState({ fullComment: "" });
   };

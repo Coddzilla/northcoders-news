@@ -81,7 +81,9 @@ class Articles extends Component {
                   <div className="card" key={article.article_id}>
                     {this.props.view === "home" && (
                       <div className="container">
-                        <img src={images.defaultImg[0]} alt={article.topic} />
+                        <Link to={`/articles/${article.article_id}`}>
+                          <img src={images.defaultImg[0]} alt={article.topic} />
+                        </Link>
                       </div>
                     )}
                     <br />

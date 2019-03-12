@@ -45,7 +45,7 @@ class CommentQuickView extends Component {
                         comment_id={comment.comment_id}
                       />
                       <h5>Written by:{comment.author}</h5>
-                      <h5>created at: {comment.created_at.slice(0, 10)}</h5>
+                      {/* <h5>created at: {comment.created_at.slice(0, 10)}</h5> */}
                       <h5>id: {comment.comment_id}</h5>
                       {username === comment.author && (
                         <button

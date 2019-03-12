@@ -18,6 +18,7 @@ class AuthorPage extends Component {
     err: null
   };
   render() {
+    console.log(this.props);
     const { user } = this.props;
     const { isLoading, authorsArticles, article, sideBarView } = this.state;
     if (this.state.err) {
@@ -99,6 +100,7 @@ class AuthorPage extends Component {
     const authorUser = users.filter(
       userToFilter => userToFilter.username === user
     );
+    console.log(authorUser);
 
     api
       .getUserArticles(user)

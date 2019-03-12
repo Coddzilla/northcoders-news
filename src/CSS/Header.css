@@ -1,0 +1,30 @@
+.Header {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  background-image: url("http://www.wearecallidus.com/wp-content/uploads/2017/03/8e3e848cbd24bdb85a7c97869ec77386.1451995352.jpg");
+  grid-area: Header;
+}
+
+.homeContainer {
+  width: 40px;
+  height: auto;
+}
+
+.homeContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.Header h2 {
+  display: flex;
+  color: darkgrey;
+  text-shadow: black 1px 1px;
+  justify-content: center;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-size: 50px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 26.4px;
+}

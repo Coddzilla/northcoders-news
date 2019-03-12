@@ -7,7 +7,8 @@
   color: darkblue;
   background-size: auto;
   background-position: center center;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Post-it-note-transparent.png");
+  background-color: palegoldenrod;
+  /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Post-it-note-transparent.png"); */
   grid-template-areas: fit-content(5cm);
 }
 

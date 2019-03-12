@@ -28,11 +28,15 @@ class App extends Component {
       <div className="App">
         <Header />
         <Auth LogIn={this.setUser} user={this.state.user}>
-          <LogIn
+          {/* <LogIn
             username={this.state.user.username}
             handleClick={this.handleClick}
+          /> */}
+          <Introduction
+            handleClick={this.handleClick}
+            user={this.state.user}
+            users={this.state.users}
           />
-          <Introduction user={this.state.user} users={this.state.users} />
         </Auth>
 
         {!this.state.user.username && (

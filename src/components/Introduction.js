@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../api";
-import { Link, Router } from "@reach/router";
+import { Router, navigate } from "@reach/router";
 import Articles from "./Articles";
 import Article from "./Article";
 import AuthorPage from "./AuthorPage";
@@ -8,7 +8,7 @@ import NoMatch from "./NoMatch";
 import PostArticle from "./PostArticle";
 import Profile from "./Profile";
 import Error from "./Error";
-import MediaQuery from "react-responsive";
+import LogIn from "./LogIn";
 
 class Introduction extends Component {
   state = {
@@ -19,7 +19,7 @@ class Introduction extends Component {
   render() {
     const { topics, isLoading } = this.state;
 
-    const { users } = this.props;
+    const { users, user } = this.props;
     if (this.state.err) {
       return <Error err={this.state.err} />;
     }
@@ -28,9 +28,16 @@ class Introduction extends Component {
     }
     return (
       <section>
-        <nav className="LogIn">
-          {" "}
-          <MediaQuery minDeviceWidth={1224}>
+        <nav>
+          {/*  */}
+          <LogIn
+            topics={topics}
+            handleClick={this.props.handleClick}
+            username={user.username}
+            handleChange={this.handleChange}
+          />
+          {/*  */}{" "}
+          {/* <MediaQuery minDeviceWidth={1224}>
             {topics.map(topic => (
               <Link
                 className="topic"
@@ -51,7 +58,7 @@ class Introduction extends Component {
             </select>
           </MediaQuery>
           <Link to="/articles">View all articles</Link>
-          <Link to="/postArticle">Post an Article!</Link>
+          <Link to="/postArticle">Post an Article!</Link> */}
         </nav>
 
         <Router className="main">
@@ -87,7 +94,7 @@ class Introduction extends Component {
   handleChange = event => {
     const { value } = event.target;
     console.log(value);
-    this.props.navigate(`/topics/${value}`);
+    navigate(`/topics/${value}`);
   };
 
   fetchTopics = () => {

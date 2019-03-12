@@ -39,8 +39,12 @@ class Article extends Component {
             <h5>
               <Link to={`/users/${article.author}/articles`}>
                 {article.author}
+                <img
+                  className="avatarImage"
+                  src={this.state.url}
+                  alt="avatar"
+                />
               </Link>
-              <img className="avatarImage" src={this.state.url} alt="avatar" />
             </h5>
 
             <Voter

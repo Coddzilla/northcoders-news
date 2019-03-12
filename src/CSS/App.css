@@ -4,19 +4,11 @@
   text-align: centre;
   height: 100vh;
   display: grid;
-  grid-template: 1fr 1fr 7fr / 4fr;
+  grid-template: 1fr 2fr 7fr / 4fr;
   grid-template-areas:
     "Header"
     "LogIn"
     "Main";
-}
-
-.Header {
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
-  background-image: url("http://www.wearecallidus.com/wp-content/uploads/2017/03/8e3e848cbd24bdb85a7c97869ec77386.1451995352.jpg");
-  grid-area: Header;
 }
 
 .main {

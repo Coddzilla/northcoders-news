@@ -2,12 +2,35 @@
   margin: 0;
   padding: 0;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 150%;
+  background-repeat: no-repeat;
   margin-left: 0px 0px 0px 30px;
-  background-position: top;
+  background-position: center;
   background-image: url("http://www.launchphotography.com/New_York_City_panorama.jpg");
   grid-area: LogIn;
   height: 70px;
   display: flex;
   justify-content: space-around;
+  align-content: space-around;
+  opacity: 0.9;
+}
+
+.button {
+  height: 20px;
+  background-color: white;
+}
+
+.LogIn h4 {
+  color: blanchedalmond;
+  text-shadow: black 1px 1px;
+}
+
+.topicChoose {
+  background-color: whitesmoke;
+  height: 20px;
+}
+.LogIn a:link,
+a:visited {
+  text-decoration: none;
+  display: inline-block;
 }
